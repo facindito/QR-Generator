@@ -1,16 +1,10 @@
-export default function Form({ url, setUrl }) {
-  const handleChange = (e) => {
-    setUrl(e.target.value)
-  }
+import FormEmail from './formEmail'
+import FormSms from './FormSms'
+import FormText from './formText'
 
-  return (
-    <textarea
-      className='my-4 h-full w-full resize-none rounded-lg border border-gray-300 py-2 px-4 text-base text-gray-700 placeholder-gray-400 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-green-600'
-      id='text'
-      name='text'
-      placeholder='Enter your text'
-      value={url}
-      onChange={handleChange}
-    ></textarea>
-  )
+export default function Form({ currentTab, setUrl, url }) {
+  if (currentTab === 'email') return <FormEmail setUrl={setUrl} url={url} />
+  if (currentTab === 'sms') return <FormSms />
+  if (currentTab === 'url') return <FormUrl />
+  return <FormText setUrl={setUrl} url={url} />
 }
