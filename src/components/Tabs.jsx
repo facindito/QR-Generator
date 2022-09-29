@@ -2,12 +2,12 @@ export default function Tabs({ handleClick, currentTab }) {
   return (
     <div className='flex w-full flex-wrap items-center justify-center gap-4 dark:bg-gray-800  dark:text-gray-100 sm:justify-center'>
       <button
-        name='url'
+        name='wsp'
         onClick={handleClick}
         className={`flex flex-shrink-0 items-center border-b-4 px-5 py-2 hover:border-green-400
-          ${currentTab === 'url' && 'border-green-400'}`}
+          ${currentTab === 'wsp' && 'border-green-400'}`}
       >
-        URL
+        WhatsApp
       </button>
       <button
         name='email'

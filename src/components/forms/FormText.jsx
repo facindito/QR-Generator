@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export default function FormText({ url, setUrl }) {
+export default function FormText({ setData }) {
   const [text, setText] = useState('')
 
   const handleChange = (e) => {
@@ -9,7 +9,7 @@ export default function FormText({ url, setUrl }) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setUrl(text)
+    setData(text)
   }
   return (
     <form onSubmit={handleSubmit} className='flex h-full w-full flex-col gap-4'>

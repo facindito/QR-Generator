@@ -1,18 +1,18 @@
 import { useState } from 'react'
 
-export default function FormSms({ setData }) {
-  const [sms, setSms] = useState({
+export default function FormWsp({ setData }) {
+  const [wsp, setWsp] = useState({
     number: 0,
     message: '',
   })
 
   const handleChange = ({ target: { name, value } }) => {
-    setSms({ ...sms, [name]: value })
+    setWsp({ ...wsp, [name]: value })
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const qrFormat = `SMSTO:${sms.number}:${sms.message}`
+    const qrFormat = `https://wa.me/${wsp.number}?text=${wsp.message}`
     setData(qrFormat)
   }
   return (

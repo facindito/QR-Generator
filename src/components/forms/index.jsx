@@ -1,10 +1,14 @@
-import FormEmail from './formEmail'
+import { useQRCode } from '../../context/qrcode.context'
+import FormEmail from './FormEmail'
 import FormSms from './FormSms'
-import FormText from './formText'
+import FormText from './FormText'
+import FormWsp from './FormWsp'
 
-export default function Form({ currentTab, setUrl, url }) {
-  if (currentTab === 'email') return <FormEmail setUrl={setUrl} url={url} />
-  if (currentTab === 'sms') return <FormSms />
-  if (currentTab === 'url') return <FormUrl />
-  return <FormText setUrl={setUrl} url={url} />
+export default function Form({ currentTab }) {
+  const { data, setData } = useQRCode()
+
+  if (currentTab === 'email') return <FormEmail setData={setData} data={data} />
+  if (currentTab === 'sms') return <FormSms setData={setData} />
+  if (currentTab === 'wsp') return <FormWsp setData={setData} />
+  return <FormText setData={setData} />
 }

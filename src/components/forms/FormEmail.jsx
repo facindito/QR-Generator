@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export default function FormEmail({ setUrl }) {
+export default function FormEmail({ setData }) {
   const [emailMsg, setEmailMsg] = useState({
     email: '',
     subject: '',
@@ -14,14 +14,15 @@ export default function FormEmail({ setUrl }) {
   const handleSubmit = (e) => {
     e.preventDefault()
     const qrFormat = `mailto:${emailMsg.email}?subject=${emailMsg.subject}&body=${emailMsg.message}`
-    setUrl(qrFormat)
+    setData(qrFormat)
   }
+  
   return (
     <form onSubmit={handleSubmit} className='flex h-full w-full flex-col gap-4'>
       <label htmlFor='email' className='flex gap-4'>
         Email:
         <input
-          type='text'
+          type='email'
           name='email'
           id='email'
           placeholder='Your email'
