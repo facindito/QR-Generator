@@ -6,7 +6,7 @@
 
 ## Capturas
 
-<img src="./public/img/app.png"/>
+<img src="./public/img/app.png" />
 
 ## Instalacion y Comandos
 
