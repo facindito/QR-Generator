@@ -25,6 +25,7 @@ body {
 main{ 
   background-color: #0056ff;
   background-image: linear-gradient(180deg, #0056ff 0%, #000000 100%);
+  position:relative;
 }
 
 img, picture, video, canvas, svg {

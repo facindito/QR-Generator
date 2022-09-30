@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <header className='mb-4 w-full bg-white/30 backdrop-blur-sm'>
+    <header className='fixed w-full bg-white/30 backdrop-blur-sm'>
       <div className='container mx-auto '>
         <h1 className='text-center text-4xl font-bold text-white'>
           QR Generator
